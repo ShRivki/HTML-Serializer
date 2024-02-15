@@ -1,0 +1,16 @@
+C:\Users\ASUS\Desktop\html Serializer\html Serializer\bin\Debug\net6.0\html Serializer.exe
+C:\Users\ASUS\Desktop\html Serializer\html Serializer\bin\Debug\net6.0\html Serializer.deps.json
+C:\Users\ASUS\Desktop\html Serializer\html Serializer\bin\Debug\net6.0\html Serializer.runtimeconfig.json
+C:\Users\ASUS\Desktop\html Serializer\html Serializer\bin\Debug\net6.0\html Serializer.dll
+C:\Users\ASUS\Desktop\html Serializer\html Serializer\bin\Debug\net6.0\html Serializer.pdb
+C:\Users\ASUS\Desktop\html Serializer\html Serializer\obj\Debug\net6.0\html Serializer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\html Serializer\html Serializer\obj\Debug\net6.0\html Serializer.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\html Serializer\html Serializer\obj\Debug\net6.0\html Serializer.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\html Serializer\html Serializer\obj\Debug\net6.0\html Serializer.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\html Serializer\html Serializer\obj\Debug\net6.0\html Serializer.dll
+C:\Users\ASUS\Desktop\html Serializer\html Serializer\obj\Debug\net6.0\refint\html Serializer.dll
+C:\Users\ASUS\Desktop\html Serializer\html Serializer\obj\Debug\net6.0\html Serializer.pdb
+C:\Users\ASUS\Desktop\html Serializer\html Serializer\obj\Debug\net6.0\html Serializer.genruntimeconfig.cache
+C:\Users\ASUS\Desktop\html Serializer\html Serializer\obj\Debug\net6.0\ref\html Serializer.dll
+C:\Users\ASUS\Desktop\html Serializer\html Serializer\bin\Debug\net6.0\HtmlTags.json
+C:\Users\ASUS\Desktop\html Serializer\html Serializer\bin\Debug\net6.0\HtmlVoidTags.json

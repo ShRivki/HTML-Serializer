@@ -1,0 +1,1453 @@
+<!doctype html>
+<html lang="he" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="canonical" href="https://learn.malkabruk.co.il/practicode/projects/pract-2/">
+    <link rel="prev" href="../pract-1/">
+    <link rel="next" href="../pract-3/"/>
+    <link rel="icon" href="../../assets/images/favicon.png"/>
+    <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
+    <title>פרויקט 2 | Html Serializer - סדנת פרקטיקוד</title>
+    <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+    <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+    <style>
+        :root {
+            --md-admonition-icon--tip: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.71 20.29-1.42 1.42a1 1 0 0 1-1.41 0L7 9.85A3.81 3.81 0 0 1 6 10a4 4 0 0 1-3.78-5.3l2.54 2.54.53-.53 1.42-1.42.53-.53L4.7 2.22A4 4 0 0 1 10 6a3.81 3.81 0 0 1-.15 1l11.86 11.88a1 1 0 0 1 0 1.41M2.29 18.88a1 1 0 0 0 0 1.41l1.42 1.42a1 1 0 0 0 1.41 0l5.47-5.46-2.83-2.83M20 2l-4 2v2l-2.17 2.17 2 2L18 8h2l2-4Z"/></svg>');
+            --md-admonition-icon--question: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"/></svg>');
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+    <style>
+        :root {
+            --md-text-font: "Rubik";
+            --md-code-font: "Roboto Mono"
+        }
+    </style>
+    <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+
+    <link rel="stylesheet" href="../../assets/stylesheets/admonitions.css">
+
+    <script>__md_scope = new URL("../..", location), __md_hash = e => [...e].reduce((e, _) => (e << 5) - e + _.charCodeAt(0), 0), __md_get = (e, _ = localStorage, t = __md_scope) => JSON.parse(_.getItem(t.pathname + "." + e)), __md_set = (e, _, t = localStorage, a = __md_scope) => { try { t.setItem(a.pathname + "." + e, JSON.stringify(_)) } catch (e) { } }</script>
+
+
+
+
+
+
+    <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet" />
+    <style>
+        html.glightbox-open {
+            overflow: initial;
+            height: 100%;
+        }
+
+        .gslide-title {
+            margin-top: 0px;
+            user-select: text;
+        }
+
+        .gslide-desc {
+            color: #666;
+            user-select: text;
+        }
+
+        .gslide-image img {
+            background: white;
+        }
+
+        .gscrollbar-fixer {
+            padding-right: 15px;
+        }
+
+        .gdesc-inner {
+            font-size: 0.75rem;
+        }
+
+        body[data-md-color-scheme="slate"] .gdesc-inner {
+            background: var(--md-default-bg-color);
+        }
+
+        body[data-md-color-scheme="slate"] .gslide-title {
+            color: var(--md-default-fg-color);
+        }
+
+        body[data-md-color-scheme="slate"] .gslide-desc {
+            color: var(--md-default-fg-color);
+        }
+    </style>
+    <script src="../../assets/javascripts/glightbox.min.js"></script>
+</head>
+<body dir="rtl" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+
+
+
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+
+
+        <a href="#2-html-serializer" class="md-skip">
+            לדלג לתוכן
+        </a>
+
+    </div>
+    <div data-md-component="announce">
+
+    </div>
+
+
+
+
+
+
+    <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+        <nav class="md-header__inner md-grid" aria-label="כותרת עליונה">
+            <a href="../.." title="סדנת פרקטיקוד" class="md-header__button md-logo" aria-label="סדנת פרקטיקוד"
+                data-md-component="logo">
+
+                <img src="../../assets/logo.png" alt="logo">
+
+            </a>
+            <label class="md-header__button md-icon" for="__drawer">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z" />
+                </svg>
+            </label>
+            <div class="md-header__title" data-md-component="header-title">
+                <div class="md-header__ellipsis">
+                    <div class="md-header__topic">
+                        <span class="md-ellipsis">
+                            סדנת פרקטיקוד
+                        </span>
+                    </div>
+                    <div class="md-header__topic" data-md-component="header-topic">
+                        <span class="md-ellipsis">
+
+                            פרויקט 2 | Html Serializer
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <label class="md-header__button md-icon" for="__search">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z" />
+                </svg>
+            </label>
+            <div class="md-search" data-md-component="search" role="dialog">
+                <label class="md-search__overlay" for="__search"></label>
+                <div class="md-search__inner" role="search">
+                    <form class="md-search__form" name="search">
+                        <input type="text" class="md-search__input" name="query" aria-label="חיפוש" placeholder="חיפוש"
+                            autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false"
+                            data-md-component="search-query" required>
+                        <label class="md-search__icon md-icon" for="__search">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z" />
+                            </svg>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z" />
+                            </svg>
+                        </label>
+                        <nav class="md-search__options" aria-label="חיפוש">
+
+                            <button type="reset" class="md-search__icon md-icon" title="ניקוי" aria-label="ניקוי"
+                                tabindex="-1">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z" />
+                                </svg>
+                            </button>
+                        </nav>
+
+                    </form>
+                    <div class="md-search__output">
+                        <div class="md-search__scrollwrap" data-md-scrollfix>
+                            <div class="md-search-result" data-md-component="search-result">
+                                <div class="md-search-result__meta">
+                                    אתחול חיפוש
+                                </div>
+                                <ol class="md-search-result__list" role="presentation"></ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </nav>
+
+
+
+        <nav class="md-tabs" aria-label="לשוניות" data-md-component="tabs">
+            <div class="md-grid">
+                <ul class="md-tabs__list">
+
+
+
+
+
+                    <li class="md-tabs__item">
+                        <a href="https://learn.malkabruk.co.il" class="md-tabs__link">
+
+
+
+
+                            דף הבית
+
+                        </a>
+                    </li>
+
+
+
+
+
+
+
+                    <li class="md-tabs__item">
+                        <a href="../.." class="md-tabs__link">
+
+
+
+
+                            פרקטיקוד
+
+                        </a>
+                    </li>
+
+
+
+
+
+
+
+
+
+
+
+                    <li class="md-tabs__item md-tabs__item--active">
+                        <a href="../pract-1/" class="md-tabs__link">
+
+
+                            הפרויקטים
+
+                        </a>
+                    </li>
+
+
+
+
+
+
+
+
+                    <li class="md-tabs__item">
+                        <a href="../../search/" class="md-tabs__link">
+
+
+
+
+                            חיפוש בגוגל
+
+                        </a>
+                    </li>
+
+
+
+
+
+
+
+                    <li class="md-tabs__item">
+                        <a href="../../assignment/" class="md-tabs__link">
+
+
+
+
+                            הגשת פרויקט
+
+                        </a>
+                    </li>
+
+
+
+                </ul>
+            </div>
+        </nav>
+
+
+    </header>
+
+    <div class="md-container" data-md-component="container">
+
+
+
+
+        <main class="md-main" data-md-component="main">
+            <div class="md-main__inner md-grid">
+
+
+
+                <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                    <div class="md-sidebar__scrollwrap">
+                        <div class="md-sidebar__inner">
+
+
+
+
+
+
+                            <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ניווט" data-md-level="0">
+                                <label class="md-nav__title" for="__drawer">
+                                    <a href="../.." title="סדנת פרקטיקוד" class="md-nav__button md-logo"
+                                        aria-label="סדנת פרקטיקוד" data-md-component="logo">
+
+                                        <img src="../../assets/logo.png" alt="logo">
+
+                                    </a>
+                                    סדנת פרקטיקוד
+                                </label>
+
+                                <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="https://learn.malkabruk.co.il" class="md-nav__link">
+
+
+                                            <span class="md-ellipsis">
+                                                דף הבית
+                                            </span>
+
+
+                                        </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../.." class="md-nav__link">
+
+
+                                            <span class="md-ellipsis">
+                                                פרקטיקוד
+                                            </span>
+
+
+                                        </a>
+                                    </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+
+
+
+
+
+                                        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+
+                                        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+
+
+                                            <span class="md-ellipsis">
+                                                הפרויקטים
+                                            </span>
+
+
+                                            <span class="md-nav__icon md-icon"></span>
+                                        </label>
+
+                                        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label"
+                                            aria-expanded="true">
+                                            <label class="md-nav__title" for="__nav_3">
+                                                <span class="md-nav__icon md-icon"></span>
+                                                הפרויקטים
+                                            </label>
+                                            <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+                                                <li class="md-nav__item">
+                                                    <a href="../pract-1/" class="md-nav__link">
+
+
+                                                        <span class="md-ellipsis">
+                                                            פרויקט 1 | CLI in .NET
+                                                        </span>
+
+
+                                                    </a>
+                                                </li>
+
+
+
+
+
+
+
+
+
+
+
+                                                <li class="md-nav__item md-nav__item--active">
+
+                                                    <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+
+
+
+
+
+                                                    <label class="md-nav__link md-nav__link--active" for="__toc">
+
+
+                                                        <span class="md-ellipsis">
+                                                            פרויקט 2 | Html Serializer
+                                                        </span>
+
+
+                                                        <span class="md-nav__icon md-icon"></span>
+                                                    </label>
+
+                                                    <a href="./" class="md-nav__link md-nav__link--active">
+
+
+                                                        <span class="md-ellipsis">
+                                                            פרויקט 2 | Html Serializer
+                                                        </span>
+
+
+                                                    </a>
+
+
+
+                                                    <nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+
+
+
+
+
+
+                                                        <label class="md-nav__title" for="__toc">
+                                                            <span class="md-nav__icon md-icon"></span>
+                                                            תוכן העניינים
+                                                        </label>
+                                                        <ul class="md-nav__list" data-md-component="toc"
+                                                            data-md-scrollfix>
+
+                                                            <li class="md-nav__item">
+                                                                <a href="#_1" class="md-nav__link">
+                                                                    תיאור הפרויקט
+                                                                </a>
+
+                                                            </li>
+
+                                                            <li class="md-nav__item">
+                                                                <a href="#html-serializer" class="md-nav__link">
+                                                                    Html Serializer
+                                                                </a>
+
+                                                                <nav class="md-nav" aria-label="Html Serializer">
+                                                                    <ul class="md-nav__list">
+
+                                                                        <li class="md-nav__item">
+                                                                            <a href="#_2" class="md-nav__link">
+                                                                                קריאה לדף אינטרנט
+                                                                            </a>
+
+                                                                        </li>
+
+                                                                        <li class="md-nav__item">
+                                                                            <a href="#_3" class="md-nav__link">
+                                                                                פירוק לפי תגיות
+                                                                            </a>
+
+                                                                        </li>
+
+                                                                        <li class="md-nav__item">
+                                                                            <a href="#htmlelement" class="md-nav__link">
+                                                                                מחלקת HtmlElement
+                                                                            </a>
+
+                                                                        </li>
+
+                                                                        <li class="md-nav__item">
+                                                                            <a href="#htmlhelper" class="md-nav__link">
+                                                                                מחלקת HtmlHelper
+                                                                            </a>
+
+                                                                        </li>
+
+                                                                        <li class="md-nav__item">
+                                                                            <a href="#singleton" class="md-nav__link">
+                                                                                Singleton
+                                                                            </a>
+
+                                                                        </li>
+
+                                                                        <li class="md-nav__item">
+                                                                            <a href="#_4" class="md-nav__link">
+                                                                                בניית העץ
+                                                                            </a>
+
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </nav>
+
+                                                            </li>
+
+                                                            <li class="md-nav__item">
+                                                                <a href="#html-query" class="md-nav__link">
+                                                                    Html Query
+                                                                </a>
+
+                                                                <nav class="md-nav" aria-label="Html Query">
+                                                                    <ul class="md-nav__list">
+
+                                                                        <li class="md-nav__item">
+                                                                            <a href="#selector" class="md-nav__link">
+                                                                                מחלקת Selector
+                                                                            </a>
+
+                                                                        </li>
+
+                                                                        <li class="md-nav__item">
+                                                                            <a href="#-htmlelement"
+                                                                                class="md-nav__link">
+                                                                                פונקציות ב-HtmlElement
+                                                                            </a>
+
+                                                                        </li>
+
+                                                                        <li class="md-nav__item">
+                                                                            <a href="#hashset" class="md-nav__link">
+                                                                                מניעת כפילויות באמצעות HashSet
+                                                                            </a>
+
+                                                                        </li>
+
+                                                                        <li class="md-nav__item">
+                                                                            <a href="#_5" class="md-nav__link">
+                                                                                מעקב ובדיקה במהלך הפיתוח
+                                                                            </a>
+
+                                                                        </li>
+
+                                                                        <li class="md-nav__item">
+                                                                            <a href="#_6" class="md-nav__link">
+                                                                                הגשת פרזנטציה
+                                                                            </a>
+
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </nav>
+
+                                                            </li>
+
+                                                        </ul>
+
+                                                    </nav>
+
+                                                </li>
+
+
+
+
+
+
+
+
+
+                                                <li class="md-nav__item">
+                                                    <a href="../pract-3/" class="md-nav__link">
+
+
+                                                        <span class="md-ellipsis">
+                                                            פרויקט 3 | Web Crawler
+                                                        </span>
+
+
+                                                    </a>
+                                                </li>
+
+
+
+
+
+
+
+
+
+                                                <li class="md-nav__item">
+                                                    <a href="../pract-4/" class="md-nav__link">
+
+
+                                                        <span class="md-ellipsis">
+                                                            פרויקט 4 | ToDo List
+                                                        </span>
+
+
+                                                    </a>
+                                                </li>
+
+
+
+
+
+
+
+
+
+                                                <li class="md-nav__item">
+                                                    <a href="../pract-5/" class="md-nav__link">
+
+
+                                                        <span class="md-ellipsis">
+                                                            פרויקט 5 | Deploy Apps
+                                                        </span>
+
+
+                                                    </a>
+                                                </li>
+
+
+
+
+
+
+
+
+
+                                                <li class="md-nav__item">
+                                                    <a href="../pract-6/" class="md-nav__link">
+
+
+                                                        <span class="md-ellipsis">
+                                                            פרויקט 6 | CV Site
+                                                        </span>
+
+
+                                                    </a>
+                                                </li>
+
+
+
+
+                                            </ul>
+                                        </nav>
+
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../../search/" class="md-nav__link">
+
+
+                                            <span class="md-ellipsis">
+                                                חיפוש בגוגל
+                                            </span>
+
+
+                                        </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../../assignment/" class="md-nav__link">
+
+
+                                            <span class="md-ellipsis">
+                                                הגשת פרויקט
+                                            </span>
+
+
+                                        </a>
+                                    </li>
+
+
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                    <div class="md-sidebar__scrollwrap">
+                        <div class="md-sidebar__inner">
+
+
+                            <nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+
+
+
+
+
+
+                                <label class="md-nav__title" for="__toc">
+                                    <span class="md-nav__icon md-icon"></span>
+                                    תוכן העניינים
+                                </label>
+                                <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+
+                                    <li class="md-nav__item">
+                                        <a href="#_1" class="md-nav__link">
+                                            תיאור הפרויקט
+                                        </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#html-serializer" class="md-nav__link">
+                                            Html Serializer
+                                        </a>
+
+                                        <nav class="md-nav" aria-label="Html Serializer">
+                                            <ul class="md-nav__list">
+
+                                                <li class="md-nav__item">
+                                                    <a href="#_2" class="md-nav__link">
+                                                        קריאה לדף אינטרנט
+                                                    </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#_3" class="md-nav__link">
+                                                        פירוק לפי תגיות
+                                                    </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#htmlelement" class="md-nav__link">
+                                                        מחלקת HtmlElement
+                                                    </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#htmlhelper" class="md-nav__link">
+                                                        מחלקת HtmlHelper
+                                                    </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#singleton" class="md-nav__link">
+                                                        Singleton
+                                                    </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#_4" class="md-nav__link">
+                                                        בניית העץ
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+                                        </nav>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#html-query" class="md-nav__link">
+                                            Html Query
+                                        </a>
+
+                                        <nav class="md-nav" aria-label="Html Query">
+                                            <ul class="md-nav__list">
+
+                                                <li class="md-nav__item">
+                                                    <a href="#selector" class="md-nav__link">
+                                                        מחלקת Selector
+                                                    </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#-htmlelement" class="md-nav__link">
+                                                        פונקציות ב-HtmlElement
+                                                    </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#hashset" class="md-nav__link">
+                                                        מניעת כפילויות באמצעות HashSet
+                                                    </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#_5" class="md-nav__link">
+                                                        מעקב ובדיקה במהלך הפיתוח
+                                                    </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#_6" class="md-nav__link">
+                                                        הגשת פרזנטציה
+                                                    </a>
+
+                                                </li>
+
+                                            </ul>
+                                        </nav>
+
+                                    </li>
+
+                                </ul>
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="md-content" data-md-component="content">
+                    <article class="md-content__inner md-typeset">
+
+
+
+
+                        <h1 id="2-html-serializer">פרויקט 2 | Html Serializer</h1>
+                        <h2 id="_1">תיאור הפרויקט</h2>
+                        <p>בפרויקט זה נפתח כלי לטיפול ועיבוד של Html. </p>
+                        <p>ניתן להשתמש בכלי כזה לצרכים שונים, לדוגמא כדי לממש Crawler.</p>
+                        <p>Crawler (או Scrapper) הוא מנגנון שקורא אתרי אינטרנט ומנתח את ה-Html שלהם כדי לחלץ ממנו את
+                            המידע הרצוי. למעשה, זה בדיוק מה שעושה מנוע החיפוש של גוגל (ואחרים). המנוע סורק את האינטרנט
+                            ומנתח את ה-Html של כל האתרים במטרה לאנדקס את המידע כך שיוכל לאחזר אותו בהתאם לשאילתות החיפוש
+                            שהמשתמשים מבקשים. </p>
+                        <p>דוגמאות נוספות לשימוש ב-Crawling:</p>
+                        <ul>
+                            <li>ניתוח אתרי אינטרנט כדי לגלות באיזה טכנולוגיות הם כתובים ובאיזה ספריות קוד הם משתמשים.
+                            </li>
+                            <li>שליפת נתונים מאתרי קניות או יד שניה כדי להציג באתר אחר.</li>
+                        </ul>
+                        <p>ועוד ועוד.</p>
+                        <p>בפרויקט זה נפתח את הקוד התשתיתי שבהמשך נוכל להשתמש בו כדי לפתח Crawler משלנו.</p>
+                        <p>הכלי שנפתח מורכב משני חלקים: Html Serializer ו-Html Query. </p>
+                        <h2 id="html-serializer">Html Serializer</h2>
+                        <p>סריאליזציה - תהליך של המרת נתונים מפורמט מסוים לאוביקטים של שפת תכנות.</p>
+                        <p>עלייך לפתח שירות שניגש לכתובת של דף אינטרנט, קורא את ה-Html שחוזר ממנה וממיר את ה-Html
+                            לאוביקטים של #C.</p>
+                        <p>שלבי הפיתוח מפורטים בפרקים הבאים.</p>
+                        <h3 id="_2">קריאה לדף אינטרנט</h3>
+                        <p>השתמשי באוביקט <code>HttpClient</code> כדי לבצע קריאה לכתובת אינטרנט.</p>
+                        <p>דוגמת קוד</p>
+                        <div class="language-csharp highlight">
+                            <table class="highlighttable">
+                                <tr>
+                                    <th colspan="2" class="filename"><span class="filename">C#</span></th>
+                                </tr>
+                                <tr>
+                                    <td class="linenos">
+                                        <div class="linenodiv">
+                                            <pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span></pre>
+                                        </div>
+                                    </td>
+                                    <td class="code">
+                                        <div>
+                                            <pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Load</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">url</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">     </span><span class="n">HttpClient</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HttpClient</span><span class="p">();</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">     </span><span class="kt">var</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">     </span><span class="kt">var</span><span class="w"> </span><span class="n">html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">ReadAsStringAsync</span><span class="p">();</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">html</span><span class="p">;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">}</span>
+</span></code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>לאחר הקריאה לכתובת האינטרנט, קיבלת מחרוזת שמכילה את כל ה-Html.</p>
+                        <h3 id="_3">פירוק לפי תגיות</h3>
+                        <p>פרקי את המחרוזת לחלקים.</p>
+                        <p>השתמשי ב-<code>Regular Expression</code> שמחפש מבנה של תגית html (מתחילה ב-&gt; ומסתיימת
+                            ב-&lt;)</p>
+                        <p>נקי את כל המחרוזות הריקות, ירידות השורה והרווחים המיותרים.</p>
+                        <details class="clip">
+                            <summary>לחצי לצפיה בסרטון &gt;&gt; Regular Expressions in .NET</summary>
+                            <p>
+                            <div style="padding-top:53%;position:relative;">
+                                <iframe
+                                    src="https://player.vdocipher.com/v2/?otp=20160313versASE323ImGqcvi5aZRj6WALDgeZJ45v1n4XEzLeaevD9wHHW9LwoM&playbackInfo=eyJ2aWRlb0lkIjoiOWMyZmY4OTU5OGM3NDQzYThkZmY5NDFiM2RkNDc3MTAifQ=="
+                                    style="border:0;max-width:100%;position:absolute;top:0;left:0;height:100%;width:100%;"
+                                    allowFullScreen="true" allow="encrypted-media"></iframe>
+                            </div>
+                            </p>
+                        </details>
+                        <p>בסיום הפירוק יש לך אוסף של מחרוזות שמהן תוכלי לבנות את האוביקטים.</p>
+                        <h3 id="htmlelement">מחלקת HtmlElement</h3>
+                        <p>צרי מחלקה שמייצגת תגית של Html.</p>
+                        <p>המחלקה תכיל את המאפיינים הבאים:</p>
+                        <div class="language-text highlight">
+                            <pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Id
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Name
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Attributes (רשימה)
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Classes (רשימה)
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>InnerHtml
+</span></code></pre>
+                        </div>
+                        <p>בנוסף, המחלקה תכיל מאפיינים של <code>Parent</code> ו-<code>Children</code> שיאפשרו לך ליצור
+                            עץ של אוביקטים.</p>
+                        <h3 id="htmlhelper">מחלקת HtmlHelper</h3>
+                        <p>פתחי מחלקת עזר שתספק לך את רשימת תגיות ה-HTML בצורה נוחה. (נדרש שימוש בהמשך)</p>
+                        <p>מצורפים קבצי JSON שמכילים רשימת תגיות. אחד מכיל את כל התגיות הקיימת ב-HTML והשני מכיל את
+                            התגיות שלא דורשות סגירה של התגית.</p>
+                        <p>מחלקת <code>HtmlHelper</code> תכיל שני מאפיינים מסוג מערך של <code>string</code>.</p>
+                        <p>ב-<code>Constructor</code> טעני את הנתונים מקבצי ה-JSON למערכים.</p>
+                        <ul class="task-list">
+                            <li class="task-list-item">
+                                <p><label class="task-list-control"><input type="checkbox" disabled checked /><span
+                                            class="task-list-indicator"></span></label> קראי את תוכן הקובץ באמצעות מחלקת
+                                    File. </p>
+                                <details class="clip">
+                                    <summary>לחצי לצפיה בסרטון &gt;&gt; How to copy file to output directory</summary>
+                                    <p>
+                                    <div style="padding-top:53%;position:relative;">
+                                        <iframe
+                                            src="https://player.vdocipher.com/v2/?otp=20160313versASE323KcrF8qRbGJflApxirLaMFagYkyItRsiNYyZLYfCemUzyma&playbackInfo=eyJ2aWRlb0lkIjoiZDBmYjVjMjNmMDEzNGRlZDg3MzY5MThhMTFjNTMwZWIifQ=="
+                                            style="border:0;max-width:100%;position:absolute;top:0;left:0;height:100%;width:100%;"
+                                            allowFullScreen="true" allow="encrypted-media"></iframe>
+                                    </div>
+                                    </p>
+                                </details>
+                            </li>
+                            <li class="task-list-item">
+                                <p><label class="task-list-control"><input type="checkbox" disabled checked /><span
+                                            class="task-list-indicator"></span></label> המירי את הנתונים למערך באמצעות
+                                    הפונקציה <code>Deserialize</code> של מחלקת <code>JsonSerializer</code> (יש להוסיף
+                                    <code>using</code> ל-<code>System.Text.Json</code>)</p>
+                            </li>
+                        </ul>
+                        <h3 id="singleton">Singleton</h3>
+                        <p>מחלקת <code>HtmlHelper</code> היא מקרה קלאסי שמתאים לתבנית עיצוב של <code>Singleton</code>.
+                        </p>
+                        <p><code>Singleton</code> נועד למקרים שבהם אנחנו מעונינים להגביל את מספר המופעים של המחלקה לאחד
+                            בלבד.</p>
+                        <p>במקרה של <code>HtmlHelper</code> מובן שאין טעם וחבל ליצור מופע חדש בכל פעם, מה שיגרור טעינה
+                            מחדש של קבצי ה-JSON ובזבוז משאבים לחינם.</p>
+                        <p>אופן המימוש של <code>Singleton</code> פשוט מאוד.</p>
+                        <details class="clip">
+                            <summary>לחצי לצפיה בסרטון &gt;&gt; Singleton in .NET</summary>
+                            <p>
+                            <div style="padding-top:53%;position:relative;">
+                                <iframe
+                                    src="https://player.vdocipher.com/v2/?otp=20160313versASE323ibT0NQ8oG3QzDJzqxKMl7y1TrQ3ANUhbiQA0uqAHUXQ9ET&playbackInfo=eyJ2aWRlb0lkIjoiNjBmZTA3Yzg5YmI0NGJiNTg5NWU4NDk3YjkzN2VhNGEifQ=="
+                                    style="border:0;max-width:100%;position:absolute;top:0;left:0;height:100%;width:100%;"
+                                    allowFullScreen="true" allow="encrypted-media"></iframe>
+                            </div>
+                            </p>
+                        </details>
+                        <h3 id="_4">בניית העץ</h3>
+                        <p>עקרונית, ניתן לרוץ על רשימת המחרוזות בריקורסיה כדי לבנות את העץ. אך למעשה, קיימת הגבלה של
+                            כמות הקריאות לפונקציה שה-Stack יכול להחזיק. הגבלה זו עלולה לגרום לשגיאת Stack Over Flow
+                            במקרה שה-Html גדול.</p>
+                        <p>צרי את אוביקט השורש וכן משתנה נוסף שיחזיק את האלמנט הנוכחי בכל איטרציה.</p>
+                        <p>רוצי בלולאה על רשימת המחרוזות ובכל איטרציה בצעי את התהליך הבא:</p>
+                        <p>חתכי את המילה הראשונה במחרוזת, ובדקי:</p>
+                        <ul class="task-list">
+                            <li class="task-list-item">
+                                <p><label class="task-list-control"><input type="checkbox" disabled checked /><span
+                                            class="task-list-indicator"></span></label> אם היא "html/" סימן שהגעת לסוף
+                                    ה-html.</p>
+                            </li>
+                            <li class="task-list-item">
+                                <p><label class="task-list-control"><input type="checkbox" disabled checked /><span
+                                            class="task-list-indicator"></span></label> אם היא מתחילה ב-"/" סימן שמדובר
+                                    בתגית סוגרת - עלי לרמה הקודמת בעץ (כלומר, שימי באלמנט הנוכחי את האבא)</p>
+                            </li>
+                            <li class="task-list-item">
+                                <p><label class="task-list-control"><input type="checkbox" disabled checked /><span
+                                            class="task-list-indicator"></span></label> אם היא שם של תגית מתגיות ה-Html
+                                    צרי אוביקט חדש והוסיפי אותו לרשימת ה-<code>Children</code> של האלמנט הנוכחי.<br />
+                                    (מצורף קובץ JSON שמכיל את רשימת התגיות ב-HTML, לפי <span class="right-to-left"><a
+                                            href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">הקישור
+                                            הזה</a></span>)<br />
+                                    פרקי את המשך המחרוזת (ללא המילה הראשונה) וצרי את רשימת ה-Attributes.<br />
+                                    כדי לפרק את המשך המחרוזת בצורה נכונה עלייך להשתמש ב-Regular Expression. </p>
+                                <details class="clip">
+                                    <summary>לחצי לצפיה בסרטון &gt;&gt; Regular Expressions in .NET</summary>
+                                    <p>
+                                    <div style="padding-top:53%;position:relative;">
+                                        <iframe
+                                            src="https://player.vdocipher.com/v2/?otp=20160313versASE323ImGqcvi5aZRj6WALDgeZJ45v1n4XEzLeaevD9wHHW9LwoM&playbackInfo=eyJ2aWRlb0lkIjoiOWMyZmY4OTU5OGM3NDQzYThkZmY5NDFiM2RkNDc3MTAifQ=="
+                                            style="border:0;max-width:100%;position:absolute;top:0;left:0;height:100%;width:100%;"
+                                            allowFullScreen="true" allow="encrypted-media"></iframe>
+                                    </div>
+                                    </p>
+                                </details>
+                                <p>אם יש <code>Attribute</code> בשם class פרקי אותו לחלקים לפי רווח (כיון שניתן להגדיר
+                                    כמה classים על אלמנט Html) ועדכני את המאפיין <code>Classes</code> בהתאם.<br />
+                                    שימי במאפיין <code>Name</code> את שם התגית וב-<code>Id</code> את המזהה
+                                    (מה-attributes, אם יש)<br />
+                                    כמו כן עדכני את ה-<code>Parent</code> בהתאם.<br />
+                                    בנוסף, בדקי אם התגית סוגרת את עצמה (self-closing) -
+                                    אם המחרוזת מסתיימת ב-"/" או שהתגית נמצאת ברשימת התגיות שלא דורשות תגית סגירה.<br />
+                                    (מצורף קובץ JSON שמכיל את רשימת התגיות שלא דורשות סגירה, לפי <span
+                                        class="right-to-left"><a
+                                            href="https://www.scaler.com/topics/self-closing-tags-in-html/">הקישור
+                                            הזה</a></span>)<br />
+                                    במקרה כזה השאירי את האלמנט הנוכחי כמות שהוא. אך אם לא, סימן שיש תגית סגירה נפרדת
+                                    ויתכן שיש תוכן פנימי לתגית הנוכחית (תגיות ילדים או <code>InnerHtml</code>) ולכן שימי
+                                    באלמנט הנוכחי את האוביקט החדש שיצרת. </p>
+                            </li>
+                            <li class="task-list-item">
+                                <p><label class="task-list-control"><input type="checkbox" disabled checked /><span
+                                            class="task-list-indicator"></span></label> אם היא לא אף אחת מהאפשרויות
+                                    הנ"ל, סימן שמדובר בטקסט פנימי של האלמנט. עדכני את המאפיין <code>InnerHtml</code> של
+                                    האלמנט הנוכחי בערך של המחרוזת.</p>
+                            </li>
+                        </ul>
+                        <p>כעת יש בידייך עץ של אוביקטי <code>HtmlElement</code> 🎉</p>
+                        <h2 id="html-query">Html Query</h2>
+                        <p>פתחי שירות לתשאול עץ של אוביקטי <code>HtmlElement</code> וחיפוש אלמנטים לפי CSS Selector.</p>
+                        <p>ממשי חיפוש בסיסי לפי שם תגית, id ושם class.</p>
+                        <p>כללי השאילתה הם כדלהלן:</p>
+                        <p>לחיפוש לפי תגית יש לשרשר את שם התגית, לדוגמא:
+                        <div class="language-text highlight">
+                            <pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>“div”
+</span></code></pre>
+                        </div>
+                        </p>
+                        <p>לחיפוש לפי id יש לשרשר את ה-id עם תחילית של #, לדוגמא:
+                        <div class="language-text highlight">
+                            <pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>“#mydiv”
+</span></code></pre>
+                        </div>
+                        </p>
+                        <p>לחיפוש לפי class יש לשרשר את שם ה-class עם תחילית של . (נקודה), לדוגמא:
+                        <div class="language-text highlight">
+                            <pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>“.class-name”
+</span></code></pre>
+                        </div>
+                        </p>
+                        <p>שרשור של כמה סלקטורים ללא רווח מציין חיפוש אלמנטים שמקיימים את כל התנאים, לדוגמא:
+                        <div class="language-text highlight">
+                            <pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&quot;div#mydiv.class-name”
+</span></code></pre>
+                        </div>
+                        </p>
+                        <p>השאילתה לעיל מחפשת אלמנטים מסוג div עם id שערכו mydiv ושיש להם class בשם class-name.</p>
+                        <p>רווח בין חלקי ה-selector מציין חיפוש בדורות הבאים של האלמנט (לעומק), לדוגמא:
+                        <div class="language-text highlight">
+                            <pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>&quot;div #mydiv .class-name”
+</span></code></pre>
+                        </div>
+                        השאילתה לעיל מחפשת אלמנטים שיש להם class בשם class-name ויש להם אבא (לא חובה ישיר) עם id שערכו
+                        mydiv, כשלאבא הזה עצמו יש אבא מסוג div.</p>
+                        <p>שלבי הפיתוח מפורטים בפרקים הבאים.</p>
+                        <h3 id="selector">מחלקת Selector</h3>
+                        <p>צרי מחלקה שמייצגת <code>Selector</code>.</p>
+                        <p>המחלקה תכיל את המאפיינים הבאים:
+                        <div class="language-text highlight">
+                            <pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>TagName
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Id
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Classes (רשימה)
+</span></code></pre>
+                        </div>
+                        </p>
+                        <p>בנוסף המחלקה תכיל מאפיינים של <code>Parent</code> ו-<code>Child</code> שיאפשרו לך לבנות
+                            היררכיה של סלקטורים.</p>
+                        <p>(במקרה הזה כל אבא מכיל בן אחד בלבד - עץ בינארי מנוון)</p>
+                        <p>כתבי פונקציה סטטית במחלקת <code>Selector</code> שממירה מחרוזת של שאילתה לאוביקט
+                            <code>Selector</code>.</p>
+                        <p>פרקי את המחרוזת לחלקים לפי הרווחים, כך שתקבלי אוסף של מחרוזות שכל אחת מייצגת רמה נוספת
+                            בשאילתה.</p>
+                        <p>צרי את אוביקט השורש וכן משתנה נוסף שיחזיק את הסלקטור הנוכחי בכל איטרציה.</p>
+                        <p>רוצי בלולאה על רשימת המחרוזות ובכל איטרציה בצעי את התהליך הבא:</p>
+                        <p>פרקי את המחרוזת לחלקים לפי המפרידים # ו-. (נקודה)</p>
+                        <p>עדכני את מאפייני הסלקטור הנוכחי בהתאם לחלקי המחרוזת.
+                            אם יש חלק במחרוזת שלא מתחיל ב-# או ב-. יש לבדוק אם הוא שם תקין של תגית HTML ורק אם כן, לשים
+                            אותו במאפיין <code>TagName</code>.</p>
+                        <p>צרי אוביקט <code>Selector</code> חדש, הוסיפי אותו כבן של הסלקטור הנוכחי ועדכני את הסלקטור
+                            הנוכחי שיצביע עליו.</p>
+                        <h3 id="-htmlelement">פונקציות ב-HtmlElement</h3>
+                        <p>ממשי שתי פונקציות לריצה על העץ במחלקת <code>HtmlElement</code>.</p>
+                        <p>פונקצית <code>Descendants</code>
+                            הפונקציה רצה על כל העץ מהאלמנט שעליו היא מופעלת ומטה, ומחזירה רשימה שטוחה של כל צאצאי האלמנט
+                            (מכל הדורות).</p>
+                        <p>כיון שהעץ עשוי להיות גדול, ריקורסיה עלולה לתקוע את ה-Stack, לכן ממשי את הפונקציה באמצעות תור
+                            - <code>Queue</code>.</p>
+                        <p>צרי <code>Queue</code> של אוביקטים מסוג <code>HtmlElement</code> ודחפי לו את האלמנט הנוכחי
+                            (this).</p>
+                        <p>רוצי עם לולאת <code>While</code> כל זמן שהתור לא ריק, ובכל איטרציה בצעי את התהליך הבא:</p>
+                        <p>שלפי את האוביקט שבתחילת התור.</p>
+                        <p>הוסיפי אותו לרשימה באמצעות <code>yield return</code>.</p>
+                        <details class="clip">
+                            <summary>לחצי לצפיה בסרטון &gt;&gt; IEnumerable &amp; yield return</summary>
+                            <p>
+                            <div style="padding-top:53%;position:relative;">
+                                <iframe
+                                    src="https://player.vdocipher.com/v2/?otp=20160313versASE3235BW3TWNwQkWmAKK7xvCcTl8TRcm5vKS5bbjFc5cpUwF5P1&playbackInfo=eyJ2aWRlb0lkIjoiOTE5MTJhOWI5YjBlNGQwNzg4MzMwNTk4ZDA1NjI2YWIifQ=="
+                                    style="border:0;max-width:100%;position:absolute;top:0;left:0;height:100%;width:100%;"
+                                    allowFullScreen="true" allow="encrypted-media"></iframe>
+                            </div>
+                            </p>
+                        </details>
+                        <p>רוצי בלולאה על הבנים של האוביקט (אם ישנם) והוסיפי אותם לתור.</p>
+                        <p>פונקצית <code>Ancestors</code>
+                            הפונקציה רצה על כל כל העץ מהאלמנט שעליו היא מופעלת ומעלה, ומחזירה רשימה שטוחה של כל אבות
+                            האלמנט (מכל הדורות). </p>
+                        <p>ממשי את הפונקציה.</p>
+                        <p>שימי לב, מימוש הפונקציה פשוט יותר מפונקצית <code>Descendants</code> ולא דורש ריקורסיה או תור.
+                        </p>
+                        <p>מציאת אלמנטים בעץ לפי סלקטור
+                            ממשי פונקצית הרחבה למחלקת <code>HtmlElement</code> שתקבל <code>Selector</code> ותחזיר רשימת
+                            אלמנטים שעונים לקריטריונים של הסלקטור.</p>
+                        <p>הפונקציה תשתמש בריקורסיה כדי לרוץ על עץ האלמנטים ועץ הסלקטור.</p>
+                        <p>הפונקציה הריקורסיבית תקבל <code>HtmlElement</code> ו-<code>Selector</code> וכן אוסף של
+                            <code>HtmlElement</code> שיחזיק את התוצאה של החיפוש.</p>
+                        <p>השתמשי בפונקציית <code>Descendants</code> כדי לקבל את רשימת כל הצאצאים של האלמנט הנוכחי.</p>
+                        <p>חפשי ברשימת הצאצאים את כל אלו שעונים לקריטריונים של הסלקטור הנוכחי.</p>
+                        <p>הפעילי את הריקורסיה על הרשימה המסוננת עם הסלקטור הבא (הבן של הנוכחי).</p>
+                        <p>אם הגעת לסלקטור האחרון (תנאי עצירה), הוסיפי את הרשימה המסוננת לאוסף שמחזיק את תוצאת החיפוש.
+                        </p>
+                        <h3 id="hashset">מניעת כפילויות באמצעות HashSet</h3>
+                        <p>אלמנט בעץ יכול לענות לתנאי ה-selector יותר מפעם אחת. לדוגמא אם בעץ יש היררכיה כזו:
+                        <div class="language-html highlight">
+                            <table class="highlighttable">
+                                <tr>
+                                    <th colspan="2" class="filename"><span class="filename">index.html</span></th>
+                                </tr>
+                                <tr>
+                                    <td class="linenos">
+                                        <div class="linenodiv">
+                                            <pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span></pre>
+                                        </div>
+                                    </td>
+                                    <td class="code">
+                                        <div>
+                                            <pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">”class-name”</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        אם נרשום selector כזה: <code>div p.class-name</code>, האלמנט <code>p</code> יענה פעמיים לתנאי,
+                        פעם אחת בגלל ה-<code>div</code> הראשון (הסבא), ופעם נוספת בגלל ה-div השני (האבא)</p>
+                        <p>ניתן למנוע את הכפילות בתוצאת השאילתה בשתי דרכים:</p>
+                        <ul>
+                            <li>
+                                <p>הדרך הפרימיטיבית - הוסיפי מאפיין דגל בשם Visited במחלקת HtmlElement והדליקי אותו בפעם
+                                    הראשונה שהאלמנט יענה לתנאי. בפעם הבאה שהאלמנט יענה לתנאי, לא תצרפי אותו לתוצאה כיון
+                                    שהדגל כבר דלוק.
+                                    כאמור זו דרך פרימיטיבית ומסורבלת. לא מומלץ להשתמש בה.</p>
+                            </li>
+                            <li>
+                                <p>הדרך המומלצת - השתמשי במחלקת <code>HashSet</code> עבור תוצאת החיפוש.
+                                    <code>HashSet</code> בנוי כך שכאשר מוסיפים לו אוביקט הוא בודק אם האוביקט כבר קיים,
+                                    אם כן, הוא פשוט לא מוסיף אותו, כדי למנוע כפילות.
+                                </p>
+                            </li>
+                        </ul>
+                        <details class="clip">
+                            <summary>לחצי לצפיה בסרטון &gt;&gt; HashSet in .NET</summary>
+                            <p>
+                            <div style="padding-top:53%;position:relative;">
+                                <iframe
+                                    src="https://player.vdocipher.com/v2/?otp=20160313versASE3237CmWevKsPimHGWrQYmbRByQQnMc2XqD8YXJm6uIIHnde8E&playbackInfo=eyJ2aWRlb0lkIjoiZjg4OWE1ZGRkNzE5NDMyYzkxM2QzYTNhNTEwYzRkMjQifQ=="
+                                    style="border:0;max-width:100%;position:absolute;top:0;left:0;height:100%;width:100%;"
+                                    allowFullScreen="true" allow="encrypted-media"></iframe>
+                            </div>
+                            </p>
+                        </details>
+                        <h3 id="_5">מעקב ובדיקה במהלך הפיתוח</h3>
+                        <p>כדי לבדוק אם רשימת האלמנטים שהפונקציה מחזירה לנו אכן נכונה ותקינה ניתן לבדוק בדפדפן על האתר
+                            עצמו.</p>
+                        <p>פתחי את ה-console ורשמי את הסלקטור הרצוי כך:
+                        <div class="language-bash highlight"><span class="filename">console</span>
+                            <pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">$$</span><span class="o">(</span><span class="s2">&quot;div .class-name&quot;</span><span class="o">)</span>
+</span></code></pre>
+                        </div>
+                        </p>
+                        <p>תקבלי את רשימת האלמנטים שעונים לקריטריון ותוכלי להשוות את התוצאה.</p>
+                        <div class="admonition note">
+                            <p class="admonition-title">הערה חשובה</p>
+                            <p>לעיתים יהיה הבדל בתוצאה שלא נובע מבעיה בפונקציה. פעמים רבות יש קוד javascript שמוסיף
+                                אלמנטים לדף מעבר ל-html הבסיסי שחזר מהקריאה לכתובת האתר.<br />
+                                אם הסלקטור בקונסול מחזיר יותר אלמנטים מהפונקציה, תוכלי לבדוק מול ה-html המקורי בלחיצה
+                                ימנית על האתר ובחירה בתפריט 'הצגת מקור הדף'.</p>
+                        </div>
+                        <details class="clip">
+                            <summary>לחצי לצפיה בסרטון &gt;&gt; How to validate the query</summary>
+                            <p>
+                            <div style="padding-top:53%;position:relative;">
+                                <iframe
+                                    src="https://player.vdocipher.com/v2/?otp=20160313versASE323n4sW9WK8RmzEPdxDAERCtUvhoV8pjoMu8r3Pzj50HdwkKx&playbackInfo=eyJ2aWRlb0lkIjoiNmY0YzQ2MWMwYmJhNGQ4ZmIzOGM3MmVhYWM5MmVjNWUifQ=="
+                                    style="border:0;max-width:100%;position:absolute;top:0;left:0;height:100%;width:100%;"
+                                    allowFullScreen="true" allow="encrypted-media"></iframe>
+                            </div>
+                            </p>
+                        </details>
+                        <hr />
+
+                        <h3 id="_6">הגשת פרזנטציה</h3>
+                        <p>עלייך להגיש הקלטת מסך עם פס קול שבה את מציגה את הפרויקט ומספרת על תהליך הפיתוח.</p>
+                        <p><span class="right-to-left"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z" />
+                                    </svg></span> <a href="/practicode/assignment/">הדרכה ליצירת פרזנטציה
+                                    מוצלחת</a></span></p>
+                        <p>עלייך להגיש הקלטת מסך עם פס קול שבה את מציגה את הפרויקט ומספרת על תהליך הפיתוח.</p>
+                        <p>ההקלטה תהיה באורך של כ-5 דקות ועלייך לכלול בה את החלקים הבאים:</p>
+                        <ul class="task-list">
+                            <li class="task-list-item">
+                                <p><label class="task-list-control"><input type="checkbox" disabled checked /><span
+                                            class="task-list-indicator"></span></label> הציגי את פונקציית Serialize
+                                    שיוצרת את עץ האלמנטים. הסבירי את הקוד בקצרה.</p>
+                            </li>
+                            <li class="task-list-item">
+                                <p><label class="task-list-control"><input type="checkbox" disabled checked /><span
+                                            class="task-list-indicator"></span></label> הציגי את מחלקת HtmlHelper והראי
+                                    איך מתבצעת טעינת הנתונים מקבצי ה-JSON.הסבירי איך מימשת אותה כ-Singleton.</p>
+                            </li>
+                            <li class="task-list-item">
+                                <p><label class="task-list-control"><input type="checkbox" disabled checked /><span
+                                            class="task-list-indicator"></span></label> הציגי את מחלקת Selector ואת
+                                    הפונקציה שיוצרת Selector ממחרוזת. הסבירי את הקוד.</p>
+                            </li>
+                            <li class="task-list-item">
+                                <p><label class="task-list-control"><input type="checkbox" disabled checked /><span
+                                            class="task-list-indicator"></span></label> הציגי את מחלקת HtmlElement כולל
+                                    הפונקציות Descendants ו-Ancestors. הסבירי את הקוד והראי איך הוא עובד. (באמצעות
+                                    breakpoints)</p>
+                            </li>
+                            <li class="task-list-item">
+                                <p><label class="task-list-control"><input type="checkbox" disabled checked /><span
+                                            class="task-list-indicator"></span></label> הציגי את הפונקציה הריקורסיבית
+                                    שמחפשת אלמנטים בעץ לפי סלקטור. הסבירי את הקוד והראי איך הוא עובד עם 3 דוגמאות של
+                                    סלקטורים שונים.</p>
+                            </li>
+                        </ul>
+                        <p><button class="md-button assignment"
+                                onclick='openNewTab("https://docs.google.com/forms/d/e/1FAIpQLSee-0FPVTPHEU0XbfJPWyJ1qeHRPnpm_w_GM56KYAsAFJFJmg/viewform?usp=pp_url&entry.133652707=full-name&entry.1488056138=github-user-name&entry.81779686=target")'>לחצי
+                                להגשת פרזנטציה</button></p>
+                        <div class="admonition question">
+                            <p class="admonition-title">הדרך היא המטרה!</p>
+                            <p>לכן גם אם לא הצלחת להשיג את כל היעדים, אם ניסית והשתדלת (אבל באמת 🙄) - זה העיקר!</p>
+                            <p>ספרי בהקלטה על הבעיה שבה שנתקלת ועל הניסיונות שעשית כדי לפתור אותה (כן, אילו שלא
+                                הצליחו...)</p>
+                        </div>
+                        <h2 style="text-align:center"> בהצלחה רבה 🤝</h2>
+
+
+
+
+
+
+                    </article>
+                </div>
+
+
+            </div>
+
+            <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z" />
+                </svg>
+                חזרה למעלה
+            </button>
+
+        </main>
+
+        <footer class="md-footer">
+
+
+
+            <nav class="md-footer__inner md-grid" aria-label="כותרת תחתונה">
+
+
+                <a href="../pract-1/" class="md-footer__link md-footer__link--prev"
+                    aria-label="הקודם: פרויקט 1 | CLI in .NET" rel="prev">
+                    <div class="md-footer__button md-icon">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z" />
+                        </svg>
+                    </div>
+                    <div class="md-footer__title">
+                        <span class="md-footer__direction">
+                            הקודם
+                        </span>
+                        <div class="md-ellipsis">
+                            פרויקט 1 | CLI in .NET
+                        </div>
+                    </div>
+                </a>
+
+
+
+                <a href="../pract-3/" class="md-footer__link md-footer__link--next"
+                    aria-label="הבא: פרויקט 3 | Web Crawler" rel="next">
+                    <div class="md-footer__title">
+                        <span class="md-footer__direction">
+                            הבא
+                        </span>
+                        <div class="md-ellipsis">
+                            פרויקט 3 | Web Crawler
+                        </div>
+                    </div>
+                    <div class="md-footer__button md-icon">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z" />
+                        </svg>
+                    </div>
+                </a>
+
+            </nav>
+
+
+            <div class="md-footer-meta md-typeset">
+                <div class="md-footer-meta__inner md-grid">
+                    <div class="md-copyright">
+
+                        <div class="md-copyright__highlight">
+                            ©️ מלכה ברוק | 052-7603743
+                        </div>
+
+
+                        Made with
+                        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+                            Material for MkDocs
+                        </a>
+
+                    </div>
+
+                    <div class="md-social">
+
+
+
+
+
+                        <a href="mailto:malka2039@gmail.com" target="_blank" rel="noopener" title=""
+                            class="md-social__link">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.-->
+                                <path
+                                    d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z" />
+                            </svg>
+                        </a>
+
+
+
+
+
+
+
+
+                        <a href="https://github.com/malbruk" target="_blank" rel="noopener" title="github.com"
+                            class="md-social__link">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.-->
+                                <path
+                                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                            </svg>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+        <div class="md-dialog__inner md-typeset"></div>
+    </div>
+
+    <script id="__config"
+        type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.top", "toc.follow"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}}</script>
+
+
+    <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+
+    <script src="../../assets/javascripts/extra.js"></script>
+
+    <script src="../../js/open_in_new_tab.js"></script>
+
+
+    <script>document$.subscribe(() => { const lightbox = GLightbox({ "touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide" }); })</script>
+</body>
+
+</html>
