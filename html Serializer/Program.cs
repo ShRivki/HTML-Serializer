@@ -68,6 +68,8 @@ Selector s2 = Selector.ParseSelectorString("div a.md-skip");
 var result =root.find(s2);
 Selector s3 = Selector.ParseSelectorString("div a.md-skip");
 var result2 = root.find(s3);
+Selector s4 = Selector.ParseSelectorString("div span.md-ellipsis");
+var result3 = root.find(s4);
 Console.WriteLine("sssssssssss");
 int f = 3;
 int f1= 3;
